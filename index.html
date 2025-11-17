@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Senjuti Das | Home</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Announcement bar (thin strip) -->
+  <div class="announcement-bar">
+    Open to internships for 2026 🔍
+  </div>
+
+  <!-- Header / Nav -->
+  <header class="site-header">
+    <div class="container nav-bar">
+      <a href="index.html" class="logo">Senjuti Das</a>
+
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link active-page">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <button class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- SUPER MINIMAL HERO / SPLASH -->
+    <section class="hero hero--minimal">
+      <div class="container hero-inner hero-inner--center">
+        <div class="hero-text hero-text--minimal">
+          <p class="eyebrow">Hello, I’m Senjuti</p>
+          <h1>Designing my future in tech.</h1>
+          <p class="hero-subtitle hero-subtitle--short">
+            CIS student · open to internships in 2026.
+          </p>
+
+          <div class="hero-actions">
+            <a href="projects.html" class="btn primary-btn">View projects</a>
+            <a href="resume_senjutidas.pdf" download class="btn ghost-btn">
+              Download resume
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TINY HIGHLIGHT CHIPS ONLY -->
+    <section class="home-highlights home-highlights--minimal">
+      <div class="container highlight-row">
+        <article class="highlight-chip reveal">
+          <span class="chip-label">Tech</span>
+          <p>Databases · networking · Python &amp; Java</p>
+        </article>
+
+        <article class="highlight-chip reveal">
+          <span class="chip-label">Projects</span>
+          <p>Systems thinking &amp; process design</p>
+        </article>
+
+        <article class="highlight-chip reveal">
+          <span class="chip-label">People</span>
+          <p>Tutoring · Shadow RA · campus leadership</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Senjuti Das.</p>
+      <p class="footer-note">Designed & coded by me as a learning project.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

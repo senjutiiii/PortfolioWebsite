@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Senjuti Das</title>
+  <link rel="stylesheet" href="style.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+    <div class="announcement-bar">
+  Open to internships for 2026 🔍
+</div>
+
+  <header class="site-header">
+    <div class="container nav-bar">
+      <a href="index.html" class="logo">Senjuti Das</a>
+
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="contact.html" class="nav-link active-page">Contact</a>
+      </nav>
+
+      <button class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+    </div>
+  </header>
+
+  <main class="page-main">
+    <section class="page-hero">
+      <div class="container">
+        <h1>Contact</h1>
+        <p>Interested in connecting, collaborating, or just saying hello? I’d love to hear from you.</p>
+      </div>
+    </section>
+
+    <section class="container contact-layout">
+      <div class="card contact-card reveal">
+        <h2>Reach out directly</h2>
+        <ul class="contact-list">
+          <li><strong>Email:</strong> <a href="mailto:dass5@go.stockton.edu">dass5@go.stockton.edu</a></li>
+          <li><strong>Phone:</strong> <a href="tel:+16099926561">+1 (609) 992-6561</a></li>
+          <li>
+            <strong>LinkedIn:</strong>
+            <a href="https://www.linkedin.com" target="_blank">View my profile</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card contact-card reveal">
+        <h2>Say hi</h2>
+        <!-- This form doesn't actually send anywhere yet, it's just UI -->
+        <form class="contact-form" onsubmit="event.preventDefault(); alert('This is a visual demo form. To contact me, please use email or LinkedIn.');">
+          <label>
+            Name
+            <input type="text" placeholder="Your name" required />
+          </label>
+          <label>
+            Email
+            <input type="email" placeholder="you@example.com" required />
+          </label>
+          <label>
+            Message
+            <textarea rows="4" placeholder="What would you like to talk about?"></textarea>
+          </label>
+          <button type="submit" class="btn primary-btn full-width">Send message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Senjuti Das.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

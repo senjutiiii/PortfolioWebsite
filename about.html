@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Senjuti Das</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <!-- Announcement bar -->
+  <div class="announcement-bar">
+    Open to internships for 2026 🔍
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav-bar">
+      <a href="index.html" class="logo">SENJUTI DAS</a>
+
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link active-page">About</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <button class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+    </div>
+  </header>
+
+  <main class="page-main">
+    <!-- Minimal hero -->
+    <section class="page-hero">
+      <div class="container">
+        <h1>About Me</h1>
+        <p>
+          I’m a Computer Information Systems student at Stockton University,
+          building a career at the intersection of technology, design, and people.
+        </p>
+
+        <a href="resume_senjutidas.pdf" download class="btn primary-btn cv-download-btn">
+          Download Resume
+        </a>
+      </div>
+    </section>
+
+    <!-- Vertical sections inspired by iutsa / yaraf -->
+    <section class="container about-sections">
+      <!-- Who I am -->
+      <article class="card about-section reveal">
+        <p class="section-label">Profile</p>
+        <h2>Who I am</h2>
+        <p>
+          I enjoy taking complex ideas and turning them into clear, useful experiences—whether
+          that’s explaining a math problem to a classmate, mapping out a system in a group
+          project, or designing visuals for social media.
+        </p>
+        <p>
+          My academic focus combines CIS with Business Administration and Digital Studies, which
+          gives me both technical and communication tools to work across teams and with diverse
+          communities.
+        </p>
+      </article>
+
+      <!-- Education -->
+      <article class="card about-section reveal">
+        <p class="section-label">Education</p>
+        <div class="about-split">
+          <div>
+            <h2>Stockton University</h2>
+            <p class="role"><strong>B.Sc. in Computer Information Systems</strong></p>
+            <p class="muted">
+              Minors: Business Administration &amp; Digital Studies · GPA 3.93/4.00 ·
+              Galloway, NJ · Jan 2024 – Present
+            </p>
+          </div>
+        </div>
+
+        <h3 class="subheading">Relevant Courses</h3>
+        <ul class="tag-list">
+          <li>Database Systems</li>
+          <li>Computer Networking Principles</li>
+          <li>Business Analytics</li>
+          <li>Systems Analysis &amp; Design</li>
+          <li>Programming in Python &amp; Java</li>
+          <li>Probability &amp; Applied Statistics</li>
+          <li>Marketing Principles</li>
+          <li>Digital Design Thinking</li>
+        </ul>
+      </article>
+
+      <!-- Experience -->
+      <article class="card about-section reveal">
+        <p class="section-label">Experience</p>
+
+        <div class="experience-block">
+          <div class="experience-header">
+            <div>
+              <h2>Residential Life, Stockton University</h2>
+              <p class="role">Student Worker · Shadow RA</p>
+            </div>
+            <p class="muted">Aug 2024 – Present</p>
+          </div>
+          <ul class="bullet-list">
+            <li>Manage front desk operations and assist with resident inquiries and lockouts.</li>
+            <li>Connect students with campus resources and maintain clear, friendly communication.</li>
+            <li>Support RAs in building a safe and welcoming community environment.</li>
+          </ul>
+        </div>
+
+        <div class="experience-block">
+          <div class="experience-header">
+            <div>
+              <h2>Mathematics Tutor, Tutoring Center</h2>
+              <p class="role">Tutor</p>
+            </div>
+            <p class="muted">Sept 2024 – May 2025</p>
+          </div>
+          <ul class="bullet-list">
+            <li>Provide one-on-one and group tutoring sessions in key math topics.</li>
+            <li>Design practice problems and review materials to support student learning.</li>
+            <li>Help students build confidence and problem-solving strategies.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Activities -->
+      <article class="card about-section reveal">
+        <p class="section-label">Activities</p>
+        <h2>Leadership &amp; involvement</h2>
+        <ul class="bullet-list">
+          <li>Global Engagement Mentor (GEM) – supporting international students on campus.</li>
+          <li>PR Co-Chair, Stockton Entertainment Team (SET) – leading event promotion.</li>
+          <li>Social media creator – running a food blog with ~6K followers.</li>
+          <li>Green Dot Bystander Training and National Earth Olympiad 2019 winner.</li>
+        </ul>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Senjuti Das.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
