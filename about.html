@@ -1,154 +1,285 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About Senjuti Das - CIS student at Stockton University with experience in technology, tutoring, and campus leadership.">
   <title>About | Senjuti Das</title>
-
-  <link rel="stylesheet" href="style.css" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✨</text></svg>">
 </head>
 <body>
-  <!-- Announcement bar -->
+  <!-- Custom Cursor -->
+  <div class="cursor"></div>
+  
+  <!-- Announcement Bar -->
   <div class="announcement-bar">
-    Open to internships for 2026 🔍
+    <span>✨ Open to internships for Summer 2026</span>
   </div>
-
+  
   <!-- Header -->
   <header class="site-header">
-    <div class="container nav-bar">
-      <a href="index.html" class="logo">SENJUTI DAS</a>
-
-      <nav class="nav-links">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="about.html" class="nav-link active-page">About</a>
-        <a href="projects.html" class="nav-link">Projects</a>
-        <a href="contact.html" class="nav-link">Contact</a>
+    <div class="container">
+      <nav class="nav-bar">
+        <a href="index.html" class="logo">Senjuti Das</a>
+        
+        <div class="nav-links">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link active-page">About</a>
+          <a href="projects.html" class="nav-link">Projects</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </div>
+        
+        <div class="nav-actions">
+          <button class="theme-toggle" aria-label="Toggle dark mode">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+            </svg>
+          </button>
+          
+          <button class="menu-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
       </nav>
-
-      <button class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
     </div>
   </header>
-
-  <main class="page-main">
-    <!-- Minimal hero -->
-    <section class="page-hero">
-      <div class="container">
+  
+  <main>
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container container--narrow">
+        <p class="eyebrow">Get to Know Me</p>
         <h1>About Me</h1>
-        <p>
-          I’m a Computer Information Systems student at Stockton University,
+        <p class="lead">
+          I'm a Computer Information Systems student at Stockton University, 
           building a career at the intersection of technology, design, and people.
         </p>
-
-        <a href="resume_senjutidas.pdf" download class="btn primary-btn cv-download-btn">
+        <a href="resume_senjutidas.pdf" download class="btn btn-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
           Download Resume
         </a>
       </div>
     </section>
-
-    <!-- Vertical sections inspired by iutsa / yaraf -->
-    <section class="container about-sections">
-      <!-- Who I am -->
-      <article class="card about-section reveal">
-        <p class="section-label">Profile</p>
-        <h2>Who I am</h2>
-        <p>
-          I enjoy taking complex ideas and turning them into clear, useful experiences—whether
-          that’s explaining a math problem to a classmate, mapping out a system in a group
-          project, or designing visuals for social media.
-        </p>
-        <p>
-          My academic focus combines CIS with Business Administration and Digital Studies, which
-          gives me both technical and communication tools to work across teams and with diverse
-          communities.
-        </p>
-      </article>
-
-      <!-- Education -->
-      <article class="card about-section reveal">
-        <p class="section-label">Education</p>
-        <div class="about-split">
-          <div>
-            <h2>Stockton University</h2>
-            <p class="role"><strong>B.Sc. in Computer Information Systems</strong></p>
-            <p class="muted">
-              Minors: Business Administration &amp; Digital Studies · GPA 3.93/4.00 ·
-              Galloway, NJ · Jan 2024 – Present
-            </p>
-          </div>
-        </div>
-
-        <h3 class="subheading">Relevant Courses</h3>
-        <ul class="tag-list">
-          <li>Database Systems</li>
-          <li>Computer Networking Principles</li>
-          <li>Business Analytics</li>
-          <li>Systems Analysis &amp; Design</li>
-          <li>Programming in Python &amp; Java</li>
-          <li>Probability &amp; Applied Statistics</li>
-          <li>Marketing Principles</li>
-          <li>Digital Design Thinking</li>
-        </ul>
-      </article>
-
-      <!-- Experience -->
-      <article class="card about-section reveal">
-        <p class="section-label">Experience</p>
-
-        <div class="experience-block">
-          <div class="experience-header">
-            <div>
-              <h2>Residential Life, Stockton University</h2>
-              <p class="role">Student Worker · Shadow RA</p>
+    
+    <!-- About Content -->
+    <section style="padding-bottom: var(--space-3xl);">
+      <div class="container">
+        <div class="about-content">
+          
+          <!-- Profile Section -->
+          <article class="about-section reveal">
+            <div class="section-label">Profile</div>
+            <div class="about-section-content">
+              <h2>Who I Am</h2>
+              <p>
+                I enjoy taking complex ideas and turning them into clear, useful experiences—whether 
+                that's explaining a math problem to a classmate, mapping out a system in a group 
+                project, or designing visuals for social media.
+              </p>
+              <p>
+                My academic focus combines CIS with Business Administration and Digital Studies, which 
+                gives me both technical and communication tools to work across teams and with diverse 
+                communities.
+              </p>
             </div>
-            <p class="muted">Aug 2024 – Present</p>
-          </div>
-          <ul class="bullet-list">
-            <li>Manage front desk operations and assist with resident inquiries and lockouts.</li>
-            <li>Connect students with campus resources and maintain clear, friendly communication.</li>
-            <li>Support RAs in building a safe and welcoming community environment.</li>
-          </ul>
-        </div>
-
-        <div class="experience-block">
-          <div class="experience-header">
-            <div>
-              <h2>Mathematics Tutor, Tutoring Center</h2>
-              <p class="role">Tutor</p>
+          </article>
+          
+          <!-- Education Section -->
+          <article class="about-section reveal">
+            <div class="section-label">Education</div>
+            <div class="about-section-content">
+              <h2>Stockton University</h2>
+              <p style="color: var(--color-accent); font-weight: 500; margin-bottom: var(--space-xs);">
+                B.Sc. in Computer Information Systems
+              </p>
+              <p style="color: var(--color-text-muted); font-size: var(--text-sm);">
+                Minors: Business Administration & Digital Studies · GPA 3.93/4.00 · Galloway, NJ · Jan 2024 – Present
+              </p>
+              
+              <div class="tag-list">
+                <span class="tag">Database Systems</span>
+                <span class="tag">Computer Networking</span>
+                <span class="tag">Business Analytics</span>
+                <span class="tag">Systems Analysis & Design</span>
+                <span class="tag">Python</span>
+                <span class="tag">Java</span>
+                <span class="tag">Probability & Statistics</span>
+                <span class="tag">Digital Design Thinking</span>
+              </div>
             </div>
-            <p class="muted">Sept 2024 – May 2025</p>
-          </div>
-          <ul class="bullet-list">
-            <li>Provide one-on-one and group tutoring sessions in key math topics.</li>
-            <li>Design practice problems and review materials to support student learning.</li>
-            <li>Help students build confidence and problem-solving strategies.</li>
-          </ul>
+          </article>
+          
+          <!-- Experience Section -->
+          <article class="about-section reveal">
+            <div class="section-label">Experience</div>
+            <div class="about-section-content">
+              <h2>Work History</h2>
+              
+              <div class="experience-item">
+                <div class="experience-header">
+                  <div>
+                    <h3>Residential Life, Stockton University</h3>
+                    <span class="experience-role">Student Worker · Shadow RA</span>
+                  </div>
+                  <span class="experience-date">Aug 2024 – Present</span>
+                </div>
+                <ul class="experience-list">
+                  <li>Manage front desk operations and assist with resident inquiries and lockouts</li>
+                  <li>Connect students with campus resources and maintain clear, friendly communication</li>
+                  <li>Support RAs in building a safe and welcoming community environment</li>
+                </ul>
+              </div>
+              
+              <div class="experience-item">
+                <div class="experience-header">
+                  <div>
+                    <h3>Mathematics Tutor, Tutoring Center</h3>
+                    <span class="experience-role">Tutor</span>
+                  </div>
+                  <span class="experience-date">Sept 2024 – May 2025</span>
+                </div>
+                <ul class="experience-list">
+                  <li>Provide one-on-one and group tutoring sessions in key math topics</li>
+                  <li>Design practice problems and review materials to support student learning</li>
+                  <li>Help students build confidence and problem-solving strategies</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+          
+          <!-- Activities Section -->
+          <article class="about-section reveal">
+            <div class="section-label">Activities</div>
+            <div class="about-section-content">
+              <h2>Leadership & Involvement</h2>
+              
+              <div style="display: grid; gap: var(--space-lg); margin-top: var(--space-lg);">
+                
+                <div style="display: flex; gap: var(--space-md); align-items: flex-start;">
+                  <div style="width: 48px; height: 48px; background: var(--color-bg-alt); border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--color-accent);">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5a17.92 17.92 0 01-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 style="font-family: var(--font-body); font-size: var(--text-base); font-weight: 600; margin-bottom: 4px;">Global Engagement Mentor (GEM)</h4>
+                    <p style="color: var(--color-text-muted); font-size: var(--text-sm); margin: 0;">Supporting international students on campus with cultural adjustment and resources</p>
+                  </div>
+                </div>
+                
+                <div style="display: flex; gap: var(--space-md); align-items: flex-start;">
+                  <div style="width: 48px; height: 48px; background: var(--color-bg-alt); border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--color-accent);">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M10.34 15.84c-.688-.06-1.386-.09-2.09-.09H7.5a4.5 4.5 0 110-9h.75c.704 0 1.402-.03 2.09-.09m0 9.18c.253.962.584 1.892.985 2.783.247.55.06 1.21-.463 1.511l-.657.38c-.551.318-1.26.117-1.527-.461a20.845 20.845 0 01-1.44-4.282m3.102.069a18.03 18.03 0 01-.59-4.59c0-1.586.205-3.124.59-4.59m0 9.18a23.848 23.848 0 018.835 2.535M10.34 6.66a23.847 23.847 0 008.835-2.535m0 0A23.74 23.74 0 0018.795 3m.38 1.125a23.91 23.91 0 011.014 5.395m-1.014 8.855c-.118.38-.245.754-.38 1.125m.38-1.125a23.91 23.91 0 001.014-5.395m0-3.46c.495.413.811 1.035.811 1.73 0 .695-.316 1.317-.811 1.73m0-3.46a24.347 24.347 0 010 3.46" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 style="font-family: var(--font-body); font-size: var(--text-base); font-weight: 600; margin-bottom: 4px;">PR Co-Chair, Stockton Entertainment Team</h4>
+                    <p style="color: var(--color-text-muted); font-size: var(--text-sm); margin: 0;">Leading event promotion and marketing initiatives for campus events</p>
+                  </div>
+                </div>
+                
+                <div style="display: flex; gap: var(--space-md); align-items: flex-start;">
+                  <div style="width: 48px; height: 48px; background: var(--color-bg-alt); border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--color-accent);">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z" />
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zM18.75 10.5h.008v.008h-.008V10.5z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 style="font-family: var(--font-body); font-size: var(--text-base); font-weight: 600; margin-bottom: 4px;">Social Media Food Blog Creator</h4>
+                    <p style="color: var(--color-text-muted); font-size: var(--text-sm); margin: 0;">Running a food blog with ~6K followers, creating engaging content and tracking analytics</p>
+                  </div>
+                </div>
+                
+                <div style="display: flex; gap: var(--space-md); align-items: flex-start;">
+                  <div style="width: 48px; height: 48px; background: var(--color-bg-alt); border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--color-accent);">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 01-.982-3.172M9.497 14.25a7.454 7.454 0 00.981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 007.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 002.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 012.916.52 6.003 6.003 0 01-5.395 4.972m0 0a6.726 6.726 0 01-2.749 1.35m0 0a6.772 6.772 0 01-3.044 0" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 style="font-family: var(--font-body); font-size: var(--text-base); font-weight: 600; margin-bottom: 4px;">Achievements & Training</h4>
+                    <p style="color: var(--color-text-muted); font-size: var(--text-sm); margin: 0;">Green Dot Bystander Training · National Earth Olympiad 2019 Winner</p>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </article>
+          
         </div>
-      </article>
-
-      <!-- Activities -->
-      <article class="card about-section reveal">
-        <p class="section-label">Activities</p>
-        <h2>Leadership &amp; involvement</h2>
-        <ul class="bullet-list">
-          <li>Global Engagement Mentor (GEM) – supporting international students on campus.</li>
-          <li>PR Co-Chair, Stockton Entertainment Team (SET) – leading event promotion.</li>
-          <li>Social media creator – running a food blog with ~6K followers.</li>
-          <li>Green Dot Bystander Training and National Earth Olympiad 2019 winner.</li>
-        </ul>
-      </article>
+      </div>
     </section>
   </main>
-
+  
+  <!-- Footer -->
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>© <span id="year"></span> Senjuti Das.</p>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>Senjuti Das</h3>
+          <p>CIS student building a career at the intersection of technology, design, and people.</p>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-newsletter">
+          <h4>Stay Updated</h4>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); Portfolio.showNotification('Thanks for subscribing! (Demo only)', 'success');">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> Senjuti Das. Designed & coded as a learning project.</p>
+        <div class="social-links">
+          <a href="mailto:dass5@go.stockton.edu" aria-label="Email">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
     </div>
   </footer>
-
+  
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
