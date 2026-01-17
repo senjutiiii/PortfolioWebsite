@@ -218,68 +218,140 @@ function initSmoothScroll() {
   });
 }
 
-/* --- Form Handling --- */
+/* --- Form Handling (Improved) --- */
 function initFormHandling() {
-  const forms = document.querySelectorAll('.contact-form, form');
-  
-  forms.forEach(form => {
+  // Only target intended contact/demo forms.
+  // Recommended: add data attribute to your form: <form data-demo-contact ...>
+  const forms = document.querySelectorAll('form.contact-form, form[data-demo-contact]');
+
+  forms.forEach((form) => {
+    // Prevent double-binding if init runs multiple times
+    if (form.dataset.formBound === "true") return;
+    form.dataset.formBound = "true";
+
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      
-      // Get form data
-      const formData = new FormData(form);
-      const data = Object.fromEntries(formData);
-      
-      // Simple validation
-      let isValid = true;
-      const requiredFields = form.querySelectorAll('[required]');
-      
-      requiredFields.forEach(field => {
-        if (!field.value.trim()) {
-          isValid = false;
-          field.classList.add('error');
-        } else {
-          field.classList.remove('error');
-        }
-      });
-      
-      if (isValid) {
-        // Show success message
-        showNotification('Thank you! Your message has been sent. This is a demo form - please reach out via email or LinkedIn for actual contact.', 'success');
-        form.reset();
-      } else {
-        showNotification('Please fill in all required fields.', 'error');
+
+      // Validate
+      const { isValid, firstInvalid } = validateForm(form);
+
+      if (!isValid) {
+        showNotification('Please fill in all required fields correctly.', 'error');
+        if (firstInvalid) firstInvalid.focus();
+        return;
       }
+
+      // Collect form data (if you need it)
+      const formData = new FormData(form);
+      const data = {};
+      formData.forEach((value, key) => { data[key] = value; });
+
+      // Demo success
+      showNotification(
+        'Thank you! Your message has been sent. This is a demo form — please reach out via email or LinkedIn for actual contact.',
+        'success'
+      );
+
+      form.reset();
     });
   });
-  
-  // Remove error class on input
-  document.querySelectorAll('input, textarea').forEach(field => {
-    field.addEventListener('input', () => {
-      field.classList.remove('error');
-    });
+
+  // Remove error styling when user fixes input
+  document.addEventListener('input', (e) => {
+    const el = e.target;
+    if (el && (el.matches('input, textarea, select'))) {
+      el.classList.remove('error');
+    }
+  });
+
+  document.addEventListener('change', (e) => {
+    const el = e.target;
+    if (el && (el.matches('input, textarea, select'))) {
+      el.classList.remove('error');
+    }
   });
 }
 
-/* --- Notification System --- */
+function validateForm(form) {
+  let isValid = true;
+  let firstInvalid = null;
+
+  // Handle required fields including radios/checkbox groups
+  const requiredFields = form.querySelectorAll('[required]');
+
+  requiredFields.forEach((field) => {
+    let fieldValid = true;
+
+    const tag = field.tagName.toLowerCase();
+    const type = (field.getAttribute('type') || '').toLowerCase();
+
+    if (type === 'checkbox') {
+      fieldValid = field.checked;
+    } else if (type === 'radio') {
+      // Validate the entire radio group by name
+      const name = field.name;
+      if (name) {
+        const group = form.querySelectorAll(`input[type="radio"][name="${CSS.escape(name)}"]`);
+        fieldValid = Array.from(group).some(r => r.checked);
+        // mark all radios in group if invalid
+        if (!fieldValid) {
+          group.forEach(r => r.classList.add('error'));
+        } else {
+          group.forEach(r => r.classList.remove('error'));
+        }
+      } else {
+        fieldValid = field.checked;
+      }
+    } else if (tag === 'select') {
+      fieldValid = !!field.value;
+    } else {
+      fieldValid = !!field.value.trim();
+    }
+
+    // Basic email validation if it's an email field
+    if (fieldValid && type === 'email') {
+      fieldValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value.trim());
+    }
+
+    if (!fieldValid) {
+      isValid = false;
+      field.classList.add('error');
+      if (!firstInvalid) firstInvalid = field;
+    } else {
+      // avoid removing for radio groups handled above
+      if (type !== 'radio') field.classList.remove('error');
+    }
+  });
+
+  return { isValid, firstInvalid };
+}
+
+/* --- Notification System (Safer) --- */
 function showNotification(message, type = 'info') {
-  // Remove existing notifications
   const existing = document.querySelector('.notification');
   if (existing) existing.remove();
-  
-  // Create notification element
+
   const notification = document.createElement('div');
   notification.className = `notification notification--${type}`;
-  notification.innerHTML = `
-    <p>${message}</p>
-    <button class="notification-close" aria-label="Close notification">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M18 6L6 18M6 6l12 12"/>
-      </svg>
-    </button>
+  notification.setAttribute('role', 'status');
+  notification.setAttribute('aria-live', 'polite');
+
+  const p = document.createElement('p');
+  p.textContent = message; // SAFE (no HTML injection)
+
+  const btn = document.createElement('button');
+  btn.className = 'notification-close';
+  btn.setAttribute('aria-label', 'Close notification');
+  btn.innerHTML = `
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+      viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M18 6L6 18M6 6l12 12"/>
+    </svg>
   `;
-  
-  // Add styles
+
+  notification.appendChild(p);
+  notification.appendChild(btn);
+
   notification.style.cssText = `
     position: fixed;
     bottom: 2rem;
@@ -296,8 +368,7 @@ function showNotification(message, type = 'info') {
     animation: slideIn 0.4s var(--ease-out);
     max-width: 400px;
   `;
-  
-  // Add animation keyframes if not exists
+
   if (!document.querySelector('#notification-styles')) {
     const style = document.createElement('style');
     style.id = 'notification-styles';
@@ -321,19 +392,18 @@ function showNotification(message, type = 'info') {
         transition: opacity 0.2s;
       }
       .notification-close:hover { opacity: 1; }
+      .error { outline: 2px solid #D64545; outline-offset: 2px; }
     `;
     document.head.appendChild(style);
   }
-  
+
   document.body.appendChild(notification);
-  
-  // Close button functionality
-  notification.querySelector('.notification-close').addEventListener('click', () => {
+
+  btn.addEventListener('click', () => {
     notification.style.animation = 'slideOut 0.3s var(--ease-out) forwards';
     setTimeout(() => notification.remove(), 300);
   });
-  
-  // Auto-remove after 5 seconds
+
   setTimeout(() => {
     if (notification.parentElement) {
       notification.style.animation = 'slideOut 0.3s var(--ease-out) forwards';
